@@ -1,0 +1,10 @@
+.explorer {
+  width: 250px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+  padding: 12px;
+}
+
+.explorer-files {
+  margin-top: 12px;
+}

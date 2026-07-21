@@ -4,40 +4,18 @@ import Editor from "../../features/editor/Editor";
 import Preview from "../../features/preview/Preview";
 import Terminal from "../../features/terminal/Terminal";
 import StatusBar from "../../features/statusBar/StatusBar";
+import "./VSCodeLayout.css";
 
 const VSCodeLayout = () => {
   return (
-    <div
-      style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <div
-        style={{
-          flex: 1,
-          display: "flex",
-          overflow: "hidden",
-        }}
-      >
+    <div className="container">
+      <div className="section">
         <ActivityBar />
 
         <Explorer />
 
-        <div
-          style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-            }}
-          >
+        <div className="rightSection">
+          <div className="viewsSection">
             <Editor />
 
             <Preview />

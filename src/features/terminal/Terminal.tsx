@@ -1,13 +1,8 @@
+import "./Terminal.css";
+
 const Terminal = () => {
   return (
-    <div
-      style={{
-        height: "180px",
-        background: "var(--panel-bg)",
-        borderTop: "1px solid var(--border-color)",
-        padding: "12px",
-      }}
-    >
+    <div className="terminal">
       <div>terminal ready...</div>
     </div>
   );

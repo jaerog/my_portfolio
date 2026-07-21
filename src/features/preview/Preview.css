@@ -1,0 +1,7 @@
+.preview {
+  width: 40%;
+  border-left: 1px solid var(--border-color);
+  background: #fff;
+  color: #000;
+  padding: 24px;
+}

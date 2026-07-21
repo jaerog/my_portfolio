@@ -1,0 +1,22 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.viewsSection {
+  flex: 1;
+  display: flex;
+}
+
+.rightSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}

@@ -1,0 +1,5 @@
+.editor {
+  flex: 1;
+  background: var(--editor-bg);
+  padding: 24px;
+}

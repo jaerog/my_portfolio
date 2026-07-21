@@ -1,12 +1,8 @@
+import "./Editor.css";
+
 const Editor = () => {
   return (
-    <div
-      style={{
-        flex: 1,
-        background: "var(--editor-bg)",
-        padding: "24px",
-      }}
-    >
+    <div className="editor">
       <h2>Editor</h2>
 
       <pre>
