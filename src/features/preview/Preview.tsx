@@ -1,13 +1,14 @@
-import "./Preview.css";
+import { files } from "../../data/files";
+import { useIDEStore } from "../../common/store/ideStore";
 
 const Preview = () => {
-  return (
-    <div className="preview">
-      <h1>Portfolio Preview</h1>
+  const activeFile = useIDEStore((s) => s.activeFile);
 
-      <p>Eventually Hero.tsx renders here.</p>
-    </div>
-  );
+  const file = files.find((f) => f.id === activeFile);
+
+  if (!file) return null;
+
+  return <div className="preview">{file.preview}</div>;
 };
 
 export default Preview;

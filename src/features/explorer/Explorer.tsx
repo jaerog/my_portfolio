@@ -1,17 +1,23 @@
-import "./Explorer.css";
+import { files } from "../../data/files";
+import { useIDEStore } from "../../common/store/ideStore";
 
 const Explorer = () => {
+  const openFile = useIDEStore((s) => s.openFile);
+  const active = useIDEStore((s) => s.activeFile);
+
   return (
     <aside className="explorer">
       <h4>EXPLORER</h4>
 
-      <div className="explorer-files">Hero.tsx</div>
-
-      <div>About.tsx</div>
-
-      <div>Projects.tsx</div>
-
-      <div>Contact.tsx</div>
+      {files.map((file) => (
+        <div
+          key={file.id}
+          className={active === file.id ? "file active" : "file"}
+          onClick={() => openFile(file.id)}
+        >
+          {file.name}
+        </div>
+      ))}
     </aside>
   );
 };

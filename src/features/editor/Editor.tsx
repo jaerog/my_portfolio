@@ -1,15 +1,16 @@
-import "./Editor.css";
+import { files } from "../../data/files";
+import { useIDEStore } from "../../common/store/ideStore";
 
 const Editor = () => {
+  const activeFile = useIDEStore((s) => s.activeFile);
+
+  const file = files.find((f) => f.id === activeFile);
+
+  if (!file) return null;
+
   return (
     <div className="editor">
-      <h2>Editor</h2>
-
-      <pre>
-        {`export const Hero = () => {
-  return <div>Hello World</div>;
-};`}
-      </pre>
+      <pre>{file.code}</pre>
     </div>
   );
 };
