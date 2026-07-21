@@ -1,0 +1,33 @@
+:root {
+  --activity-bg: #181818;
+  --sidebar-bg: #252526;
+  --editor-bg: #1e1e1e;
+  --panel-bg: #181818;
+  --status-bg: #007acc;
+
+  --border-color: #333333;
+
+  --text-primary: #cccccc;
+  --text-secondary: #858585;
+
+  --accent: #007acc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: var(--editor-bg);
+  color: var(--text-primary);
+  font-family: "Segoe UI", sans-serif;
+}
