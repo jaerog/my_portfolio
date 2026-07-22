@@ -1,24 +1,69 @@
 .resize-handle {
   position: relative;
+
   background: transparent;
-  transition: background 120ms;
+
+  transition:
+    background 0.12s,
+    opacity 0.12s;
+
+  opacity: 0;
+}
+
+.workspace:hover .resize-handle {
+  opacity: 0.5;
 }
 
 .resize-handle:hover {
-  background: rgba(255, 255, 255, 0.08);
+  opacity: 1;
+}
+
+.resize-handle[data-resize-handle-active] {
+  opacity: 1;
 }
 
 .resize-handle.horizontal {
-  width: 4px;
+  width: 8px;
+
   cursor: col-resize;
 }
 
 .resize-handle.vertical {
-  height: 4px;
+  height: 8px;
+
   cursor: row-resize;
 }
 
 .resize-grip {
   position: absolute;
+
   inset: 0;
+}
+
+.resize-handle.horizontal .resize-grip {
+  width: 1px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: transparent;
+}
+
+.resize-handle.vertical .resize-grip {
+  height: 1px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: transparent;
+}
+
+.resize-handle:hover .resize-grip {
+  background: var(--accent);
+}
+
+.resize-handle[data-resize-handle-active] .resize-grip {
+  background: var(--accent);
 }

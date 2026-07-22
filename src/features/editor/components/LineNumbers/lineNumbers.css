@@ -1,21 +1,11 @@
 .line-numbers {
-  width: 56px;
+  padding: 24px 10px 24px 0;
 
-  background: var(--editor-bg);
+  display: flex;
 
-  color: #858585;
+  flex-direction: column;
 
-  text-align: right;
-
-  padding-top: 24px;
-
-  padding-right: 12px;
+  align-items: flex-end;
 
   line-height: 24px;
-
-  font-size: 14px;
-
-  font-family: Consolas, monospace;
-
-  user-select: none;
 }

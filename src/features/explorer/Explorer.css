@@ -1,14 +1,11 @@
 .explorer {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
   background: var(--sidebar-bg);
 }
+
 .explorer-header {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-color);
   text-align: "left";
-  padding: 8px;
 }
 .explorer-files {
   margin-top: 12px;

@@ -1,10 +1,11 @@
+import PanelContainer from "../../common/components/PanelContainer/PanelContainer";
 import "./Terminal.css";
 
 const Terminal = () => {
   return (
-    <div className="terminal">
+    <PanelContainer className="terminal">
       <div>terminal ready...</div>
-    </div>
+    </PanelContainer>
   );
 };
 

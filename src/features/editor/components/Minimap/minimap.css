@@ -1,9 +1,9 @@
 .minimap {
   width: 120px;
 
-  background: #252526;
+  background: #181818;
 
-  padding-top: 20px;
+  border-left: 1px solid var(--border-color);
 
   overflow: hidden;
 }

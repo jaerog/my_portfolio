@@ -7,6 +7,7 @@ import EditorTabs from "./components/EditorTabs";
 import Breadcrumb from "./components/Breadcrumb/Breadcrumb";
 import LineNumbers from "./components/LineNumbers/LineNumbers";
 import CodeEditor from "./components/CodeEditor/CodeEditor";
+import PanelContainer from "../../common/components/PanelContainer/PanelContainer";
 // import Minimap from "./components/Minimap/Minimap";
 
 const Editor = () => {
@@ -17,7 +18,7 @@ const Editor = () => {
   if (!file) return null;
 
   return (
-    <div className="editor">
+    <PanelContainer className="editor">
       <EditorTabs />
 
       <Breadcrumb file={file} />
@@ -29,7 +30,7 @@ const Editor = () => {
 
         {/* <Minimap code={file.code} /> */}
       </div>
-    </div>
+    </PanelContainer>
   );
 };
 

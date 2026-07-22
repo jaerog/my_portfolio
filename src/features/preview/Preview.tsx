@@ -1,5 +1,7 @@
 import { files } from "../../data/files";
 import { useIDEStore } from "../../common/store/ideStore";
+import PanelContainer from "../../common/components/PanelContainer/PanelContainer";
+import "./Preview.css";
 
 const Preview = () => {
   const activeFile = useIDEStore((s) => s.activeFile);
@@ -10,9 +12,9 @@ const Preview = () => {
   const Component = file.component;
 
   return (
-    <div className="preview">
+    <PanelContainer className="preview">
       <Component />
-    </div>
+    </PanelContainer>
   );
 };
 
