@@ -1,0 +1,24 @@
+.code-editor {
+  flex: 1;
+
+  overflow: auto;
+}
+
+.shiki-wrapper {
+  min-height: 100%;
+}
+
+.shiki {
+  margin: 0 !important;
+
+  padding: 24px !important;
+
+  background: transparent !important;
+
+  font-size: 14px !important;
+
+  line-height: 24px !important;
+
+  font-family:
+    Consolas, "Cascadia Code", "JetBrains Mono", monospace !important;
+}

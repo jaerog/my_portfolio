@@ -1,0 +1,21 @@
+.line-numbers {
+  width: 56px;
+
+  background: var(--editor-bg);
+
+  color: #858585;
+
+  text-align: right;
+
+  padding-top: 24px;
+
+  padding-right: 12px;
+
+  line-height: 24px;
+
+  font-size: 14px;
+
+  font-family: Consolas, monospace;
+
+  user-select: none;
+}

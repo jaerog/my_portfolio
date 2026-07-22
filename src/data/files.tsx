@@ -1,14 +1,16 @@
-import Hero from "../features/portfolio/components/Hero";
-import About from "../features/portfolio/components/About";
-import type { ReactNode } from "react";
+import Hero from "../features/portfolio/components/Hero/Hero";
+import About from "../features/portfolio/components/About/About";
+import type { ComponentType } from "react";
+import { heroCode } from "../features/portfolio/components/Hero/HeroCode";
+import { aboutCode } from "../features/portfolio/components/About/aboutCode";
 
 export type FileData = {
   id: string;
   name: string;
-  extension: "tsx";
+  extension: "tsx" | "ts" | "css" | "json" | "md";
   path: string;
   code: string;
-  preview: ReactNode;
+  component: ComponentType;
 };
 
 export const files: FileData[] = [
@@ -21,21 +23,9 @@ export const files: FileData[] = [
 
     path: "src/Hero.tsx",
 
-    code: `export default function Hero() {
+    code: heroCode,
 
-    return (
-
-        <section>
-
-            <h1>Jaelyn Rogers</h1>
-
-        </section>
-
-    );
-
-}`,
-
-    preview: <Hero />,
+    component: Hero,
   },
 
   {
@@ -47,20 +37,8 @@ export const files: FileData[] = [
 
     path: "src/About.tsx",
 
-    code: `export default function About() {
+    code: aboutCode,
 
-    return (
-
-        <section>
-
-            <h1>About Me</h1>
-
-        </section>
-
-    );
-
-}`,
-
-    preview: <About />,
+    component: About,
   },
 ];

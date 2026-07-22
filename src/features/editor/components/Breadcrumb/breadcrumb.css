@@ -1,0 +1,19 @@
+.breadcrumb {
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding-left: 18px;
+
+  background: #1f1f1f;
+
+  border-bottom: 1px solid var(--border-color);
+
+  color: #888;
+
+  font-size: 12px;
+}

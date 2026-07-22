@@ -7,8 +7,13 @@ const Preview = () => {
   const file = files.find((f) => f.id === activeFile);
 
   if (!file) return null;
+  const Component = file.component;
 
-  return <div className="preview">{file.preview}</div>;
+  return (
+    <div className="preview">
+      <Component />
+    </div>
+  );
 };
 
 export default Preview;

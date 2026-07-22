@@ -1,0 +1,19 @@
+.minimap {
+  width: 120px;
+
+  background: #252526;
+
+  padding-top: 20px;
+
+  overflow: hidden;
+}
+
+.mini-line {
+  height: 2px;
+
+  margin: 3px 0;
+
+  background: #5a5a5a;
+
+  opacity: 0.5;
+}
