@@ -12,7 +12,10 @@ interface IDEStore {
 
   openFiles: string[];
 
-  explorerCollapsed: boolean;
+  collapsedPanels: {
+    explorer: boolean;
+    terminal: boolean;
+  };
 
   sourceControlVisible: boolean;
 
@@ -33,6 +36,9 @@ interface IDEStore {
   closeFile: (id: string) => void;
 
   expandedFolders: Record<string, boolean>;
+
+  togglePanel: (panel: "explorer" | "terminal") => void;
+
   toggleFolder: (id: string) => void;
   setTheme: (theme: Theme) => void;
 
@@ -56,7 +62,10 @@ export const useIDEStore = create<IDEStore>((set) => ({
     src: true,
   },
 
-  explorerCollapsed: false,
+  collapsedPanels: {
+    explorer: false,
+    terminal: false,
+  },
 
   sourceControlVisible: false,
 
@@ -92,7 +101,13 @@ export const useIDEStore = create<IDEStore>((set) => ({
             : state.activeFile,
       };
     }),
-
+  togglePanel: (panel) =>
+    set((state) => ({
+      collapsedPanels: {
+        ...state.collapsedPanels,
+        [panel]: !state.collapsedPanels[panel],
+      },
+    })),
   toggleFolder: (folder: string) =>
     set((state) => ({
       expandedFolders: {

@@ -2,10 +2,10 @@
   flex: 1;
 
   overflow: auto;
-}
 
-.shiki-wrapper {
-  min-height: 100%;
+  min-width: 0;
+
+  min-height: 0;
 }
 
 .shiki {
@@ -13,12 +13,18 @@
 
   padding: 24px !important;
 
+  min-width: max-content;
+
   background: transparent !important;
-
-  font-size: 14px !important;
-
-  line-height: 24px !important;
 
   font-family:
     Consolas, "Cascadia Code", "JetBrains Mono", monospace !important;
+}
+
+.shiki code {
+  white-space: pre;
+}
+
+.shiki .line {
+  display: block;
 }

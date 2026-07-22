@@ -7,7 +7,7 @@ import EditorTabs from "./components/EditorTabs";
 import Breadcrumb from "./components/Breadcrumb/Breadcrumb";
 import LineNumbers from "./components/LineNumbers/LineNumbers";
 import CodeEditor from "./components/CodeEditor/CodeEditor";
-import Minimap from "./components/Minimap/Minimap";
+// import Minimap from "./components/Minimap/Minimap";
 
 const Editor = () => {
   const activeFile = useIDEStore((s) => s.activeFile);
@@ -27,7 +27,7 @@ const Editor = () => {
 
         <CodeEditor code={file.code} />
 
-        <Minimap code={file.code} />
+        {/* <Minimap code={file.code} /> */}
       </div>
     </div>
   );

@@ -1,0 +1,24 @@
+.resize-handle {
+  position: relative;
+  background: transparent;
+  transition: background 120ms;
+}
+
+.resize-handle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.resize-handle.horizontal {
+  width: 4px;
+  cursor: col-resize;
+}
+
+.resize-handle.vertical {
+  height: 4px;
+  cursor: row-resize;
+}
+
+.resize-grip {
+  position: absolute;
+  inset: 0;
+}
