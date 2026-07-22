@@ -1,7 +1,17 @@
 import Hero from "../features/portfolio/components/Hero";
 import About from "../features/portfolio/components/About";
+import type { ReactNode } from "react";
 
-export const files = [
+export type FileData = {
+  id: string;
+  name: string;
+  extension: "tsx";
+  path: string;
+  code: string;
+  preview: ReactNode;
+};
+
+export const files: FileData[] = [
   {
     id: "hero",
 

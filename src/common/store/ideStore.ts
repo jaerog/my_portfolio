@@ -32,6 +32,8 @@ interface IDEStore {
 
   closeFile: (id: string) => void;
 
+  expandedFolders: Record<string, boolean>;
+  toggleFolder: (id: string) => void;
   setTheme: (theme: Theme) => void;
 
   addTerminalOutput: (line: string) => void;
@@ -49,6 +51,10 @@ export const useIDEStore = create<IDEStore>((set) => ({
   activeFile: "hero",
 
   openFiles: ["hero"],
+
+  expandedFolders: {
+    src: true,
+  },
 
   explorerCollapsed: false,
 
@@ -86,6 +92,14 @@ export const useIDEStore = create<IDEStore>((set) => ({
             : state.activeFile,
       };
     }),
+
+  toggleFolder: (folder: string) =>
+    set((state) => ({
+      expandedFolders: {
+        ...state.expandedFolders,
+        [folder]: !state.expandedFolders[folder],
+      },
+    })),
 
   setTheme: (theme) => set({ theme }),
 

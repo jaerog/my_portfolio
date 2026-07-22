@@ -1,4 +1,4 @@
-import { Files, Search, GitBranch, Blocks } from "lucide-react";
+import { Files, Search, GitBranch, Blocks, Github } from "lucide-react";
 
 import "./activityBar.css";
 
@@ -10,6 +10,7 @@ const ActivityBar = () => {
         <Search size={22} />
         <GitBranch size={22} />
         <Blocks size={22} />
+        <Github size={22} /> //TODO: link
       </div>
     </aside>
   );

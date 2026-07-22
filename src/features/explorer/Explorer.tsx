@@ -1,24 +1,19 @@
+import { useMemo } from "react";
 import { files } from "../../data/files";
-import { useIDEStore } from "../../common/store/ideStore";
+import { buildTree } from "./utils/buildTree";
+import "./Explorer.css";
+import { ExplorerHeader } from "./components/ExplorerHeader";
+import { Tree } from "./components/Tree";
 
 const Explorer = () => {
-  const openFile = useIDEStore((s) => s.openFile);
-  const active = useIDEStore((s) => s.activeFile);
+  const tree = useMemo(() => buildTree(files), []);
 
   return (
-    <aside className="explorer">
-      <h4>EXPLORER</h4>
+    <div className="explorer">
+      <ExplorerHeader />
 
-      {files.map((file) => (
-        <div
-          key={file.id}
-          className={active === file.id ? "file active" : "file"}
-          onClick={() => openFile(file.id)}
-        >
-          {file.name}
-        </div>
-      ))}
-    </aside>
+      <Tree nodes={tree} />
+    </div>
   );
 };
 
