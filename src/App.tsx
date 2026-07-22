@@ -1,7 +1,11 @@
 import VSCodeLayout from "./common/layouts/VSCodeLayout";
 
 function App() {
-  return <VSCodeLayout />;
+  return (
+    <div>
+      <VSCodeLayout />
+    </div>
+  );
 }
 
 export default App;

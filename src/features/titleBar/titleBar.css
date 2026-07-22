@@ -1,0 +1,89 @@
+.title-bar {
+  height: 35px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  background: #181818;
+
+  border-bottom: 1px solid var(--border-color);
+
+  user-select: none;
+}
+
+.title-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  padding-left: 12px;
+}
+
+.vscode-icon {
+  color: #1f9cf0;
+
+  font-size: 18px;
+
+  margin-right: 8px;
+}
+
+.menu-button {
+  background: none;
+
+  border: none;
+
+  color: var(--text-primary);
+
+  padding: 4px 8px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+.menu-button:hover {
+  background: #2d2d2d;
+}
+
+.title-center {
+  flex: 1;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.command-center {
+  width: 420px;
+
+  height: 26px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 6px;
+
+  background: #242424;
+
+  color: #999;
+
+  font-size: 13px;
+}
+
+.title-right {
+  width: 120px;
+
+  display: flex;
+
+  justify-content: space-evenly;
+}

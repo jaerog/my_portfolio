@@ -4,11 +4,13 @@ import Editor from "../../features/editor/Editor";
 import Preview from "../../features/preview/Preview";
 import Terminal from "../../features/terminal/Terminal";
 import StatusBar from "../../features/statusBar/StatusBar";
+import TitleBar from "../../features/titleBar/TitleBar";
 import "./VSCodeLayout.css";
 
 const VSCodeLayout = () => {
   return (
     <div className="container">
+      <TitleBar />
       <div className="section">
         <ActivityBar />
 

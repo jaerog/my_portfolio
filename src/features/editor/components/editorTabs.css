@@ -1,0 +1,33 @@
+.editor-tabs {
+  display: flex;
+
+  height: 35px;
+
+  background: #252526;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.editor-tab {
+  min-width: 150px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 0 12px;
+
+  cursor: pointer;
+
+  color: #999;
+
+  border-right: 1px solid #333;
+}
+
+.editor-tab.active {
+  color: white;
+
+  background: #1e1e1e;
+}

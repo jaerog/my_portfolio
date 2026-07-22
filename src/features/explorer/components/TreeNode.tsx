@@ -2,17 +2,16 @@ import { DescriptionOutlined, ChevronRight } from "@mui/icons-material";
 import FolderOutlinedIcon from "@mui/icons-material/FolderOutlined";
 import FolderOpenOutlinedIcon from "@mui/icons-material/FolderOpenOutlined";
 import clsx from "clsx";
-
 import { useIDEStore } from "../../../common/store/ideStore";
 import type { TreeNodeData } from "../../../common/types/explorer";
 import "../Explorer.css";
-
-const INDENT_SIZE = 12;
 
 type TreeNodeProps = {
   node: TreeNodeData;
   depth?: number;
 };
+
+const INDENT_SIZE = 12;
 
 export const TreeNode = ({ node, depth = 0 }: TreeNodeProps) => {
   const openFile = useIDEStore((s) => s.openFile);
