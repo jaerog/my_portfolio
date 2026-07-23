@@ -1,23 +1,34 @@
-.activity-bar {
-  width: 48px;
-  background: var(--activity-bg);
-
-  border-right: 1px solid var(--border-color);
-
-  display: flex;
-  justify-content: flex-start;
-}
-
-.top-icons {
+.activity-button {
   width: 100%;
+  height: 48px;
 
   display: flex;
-  flex-direction: column;
+
   align-items: center;
 
-  gap: 24px;
+  justify-content: center;
 
-  padding-top: 16px;
+  background: transparent;
 
-  color: var(--text-secondary);
+  color: #858585;
+
+  border: none;
+
+  cursor: pointer;
+
+  border-left: 2px solid transparent;
+
+  transition: all 0.15s;
+}
+
+.activity-button:hover {
+  color: white;
+}
+
+.activity-button.active {
+  color: white;
+
+  border-left: 2px solid #007acc;
+
+  background: rgba(255, 255, 255, 0.05);
 }

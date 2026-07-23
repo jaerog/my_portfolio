@@ -1,4 +1,4 @@
-export type Sidebar = "explorer" | "search" | "sourceControl" | "extensions";
+export type Sidebar = "explorer" | "search" | "git" | "extensions";
 
 export type BottomPanel = "terminal" | "problems" | "output" | "debug";
 

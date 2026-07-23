@@ -1,0 +1,113 @@
+.browser-header {
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 12px;
+
+  background: #ececec;
+
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.browser-actions {
+  display: flex;
+
+  gap: 4px;
+}
+
+.browser-actions button {
+  width: 28px;
+
+  height: 28px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: transparent;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.browser-actions button:hover {
+  background: #d9d9d9;
+}
+
+.browser-address {
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  height: 28px;
+
+  padding: 0 12px;
+
+  border-radius: 6px;
+
+  background: white;
+
+  color: #555;
+
+  font-size: 13px;
+}
+
+.browser-live {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #00a34a;
+
+  font-weight: 600;
+
+  font-size: 13px;
+}
+
+.live-dot {
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #00d15c;
+
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+
+    opacity: 0.45;
+  }
+
+  100% {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+}

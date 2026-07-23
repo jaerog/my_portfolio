@@ -1,8 +1,7 @@
 import "./titleBar.css";
 
 import { Minus, Square, X, Search } from "lucide-react";
-
-// import { SiVisualstudiocode } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 
 const menus = [
   "File",
@@ -19,7 +18,7 @@ const TitleBar = () => {
   return (
     <header className="title-bar">
       <div className="title-left">
-        {/* <SiVisualstudiocode className="vscode-icon" /> */}
+        <VscVscode className="vscode-icon" />
 
         {menus.map((menu) => (
           <button key={menu} className="menu-button">

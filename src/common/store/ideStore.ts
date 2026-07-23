@@ -9,37 +9,39 @@ interface IDEStore {
   activeBottomPanel: BottomPanel;
 
   activeFile: string;
-
   openFiles: string[];
 
-  collapsedPanels: {
-    explorer: boolean;
-    terminal: boolean;
-  };
+  expandedFolders: Record<string, boolean>;
 
-  sourceControlVisible: boolean;
+  collapsedPanels: {
+    sidebar: boolean;
+    terminal: boolean;
+    preview: boolean;
+  };
 
   theme: Theme;
 
   terminalHistory: string[];
-
   terminalOutput: string[];
 
   setBootComplete: (value: boolean) => void;
 
   setSidebar: (sidebar: Sidebar) => void;
 
+  toggleSidebar: () => void;
+
   setBottomPanel: (panel: BottomPanel) => void;
+
+  toggleTerminal: () => void;
+
+  togglePreview: () => void;
 
   openFile: (id: string) => void;
 
   closeFile: (id: string) => void;
 
-  expandedFolders: Record<string, boolean>;
+  toggleFolder: (folder: string) => void;
 
-  togglePanel: (panel: "explorer" | "terminal") => void;
-
-  toggleFolder: (id: string) => void;
   setTheme: (theme: Theme) => void;
 
   addTerminalOutput: (line: string) => void;
@@ -63,11 +65,10 @@ export const useIDEStore = create<IDEStore>((set) => ({
   },
 
   collapsedPanels: {
-    explorer: false,
+    sidebar: false,
     terminal: false,
+    preview: false,
   },
-
-  sourceControlVisible: false,
 
   theme: "dark-plus",
 
@@ -75,11 +76,65 @@ export const useIDEStore = create<IDEStore>((set) => ({
 
   terminalOutput: [],
 
-  setBootComplete: (value) => set({ bootComplete: value }),
+  setBootComplete: (value) =>
+    set({
+      bootComplete: value,
+    }),
 
-  setSidebar: (sidebar) => set({ activeSidebar: sidebar }),
+  setSidebar: (sidebar) =>
+    set((state) => {
+      // Clicking the already-open sidebar collapses it
+      if (state.activeSidebar === sidebar && !state.collapsedPanels.sidebar) {
+        return {
+          collapsedPanels: {
+            ...state.collapsedPanels,
+            sidebar: true,
+          },
+        };
+      }
 
-  setBottomPanel: (panel) => set({ activeBottomPanel: panel }),
+      return {
+        activeSidebar: sidebar,
+        collapsedPanels: {
+          ...state.collapsedPanels,
+          sidebar: false,
+        },
+      };
+    }),
+
+  toggleSidebar: () =>
+    set((state) => ({
+      collapsedPanels: {
+        ...state.collapsedPanels,
+        sidebar: !state.collapsedPanels.sidebar,
+      },
+    })),
+
+  setBottomPanel: (panel) =>
+    set({
+      activeBottomPanel: panel,
+      collapsedPanels: {
+        terminal: false,
+        sidebar: false,
+        preview: false,
+      },
+    }),
+
+  toggleTerminal: () =>
+    set((state) => ({
+      collapsedPanels: {
+        ...state.collapsedPanels,
+        terminal: !state.collapsedPanels.terminal,
+      },
+    })),
+
+  togglePreview: () =>
+    set((state) => ({
+      collapsedPanels: {
+        ...state.collapsedPanels,
+        preview: !state.collapsedPanels.preview,
+      },
+    })),
 
   openFile: (id) =>
     set((state) => ({
@@ -91,7 +146,7 @@ export const useIDEStore = create<IDEStore>((set) => ({
 
   closeFile: (id) =>
     set((state) => {
-      const remaining = state.openFiles.filter((f) => f !== id);
+      const remaining = state.openFiles.filter((file) => file !== id);
 
       return {
         openFiles: remaining,
@@ -101,14 +156,8 @@ export const useIDEStore = create<IDEStore>((set) => ({
             : state.activeFile,
       };
     }),
-  togglePanel: (panel) =>
-    set((state) => ({
-      collapsedPanels: {
-        ...state.collapsedPanels,
-        [panel]: !state.collapsedPanels[panel],
-      },
-    })),
-  toggleFolder: (folder: string) =>
+
+  toggleFolder: (folder) =>
     set((state) => ({
       expandedFolders: {
         ...state.expandedFolders,
@@ -116,7 +165,10 @@ export const useIDEStore = create<IDEStore>((set) => ({
       },
     })),
 
-  setTheme: (theme) => set({ theme }),
+  setTheme: (theme) =>
+    set({
+      theme,
+    }),
 
   addTerminalOutput: (line) =>
     set((state) => ({

@@ -9,6 +9,7 @@ import Preview from "../../features/preview/Preview";
 import Terminal from "../../features/terminal/Terminal";
 import ResizeHandle from "../components/ResizeHandle/ResizeHandle";
 import { useIDEStore } from "../store/ideStore";
+import Sidebar from "../../features/sidebar/Sidebar";
 
 const VSCodeLayout = () => {
   const collapsed = useIDEStore((s) => s.collapsedPanels);
@@ -27,7 +28,7 @@ const VSCodeLayout = () => {
             <ActivityBar />
 
             <Group orientation="horizontal" autoSave="main-layout">
-              {!collapsed.explorer && (
+              {!collapsed.sidebar && (
                 <>
                   <Panel
                     defaultSize={200}
@@ -35,7 +36,7 @@ const VSCodeLayout = () => {
                     maxSize={250}
                     collapsible
                   >
-                    <Explorer />
+                    <Sidebar />
                   </Panel>
 
                   <ResizeHandle direction="horizontal" />
